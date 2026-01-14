@@ -7,12 +7,19 @@ const path = require('path');
 const axios = require('axios');
 const { execSync } = require('child_process');
 
-const CONFIG_PATH = path.join(__dirname, 'adaptive-config.json');
+
+require('dotenv').config();
 const LOG_PATH = path.join(__dirname, 'adaptive-log.jsonl');
 const ADAPTIVE_SCRIPT = path.join(__dirname, 'json-to-adaptive.js');
 
+
+// 환경변수에서 값 읽기
 function loadConfig() {
-  return JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf8'));
+  return {
+    targetUrlQA: process.env.TARGET_URL_QA,
+    targetUrlPROD: process.env.TARGET_URL_PROD,
+    // 필요시 추가 환경변수
+  };
 }
 
 function appendLog(entry) {
@@ -114,13 +121,8 @@ app.post('/prod', async (req, res) => {
   }
 });
 
-// 설정 URL 변경
-app.post('/set-url', (req, res) => {
-  const { url } = req.body;
-  if (!url || typeof url !== 'string') return res.status(400).json({ error: 'url required' });
-  fs.writeFileSync(CONFIG_PATH, JSON.stringify({ targetUrl: url }, null, 2));
-  res.json({ ok: true, url });
-});
+// .env 파일을 직접 수정하는 API는 제공하지 않음 (보안상)
+// 필요시 별도 관리 도구 구현 권장
 
 // 최근 로그 조회
 app.get('/logs', (req, res) => {
@@ -133,9 +135,10 @@ app.get('/logs', (req, res) => {
 });
 
 const PORT = process.env.PORT || 5001;
-// 서버 시작 시 최신 config를 읽어 targetUrl을 출력
+// 서버 시작 시 환경변수에서 targetUrl을 출력
 app.listen(PORT, () => {
-  const { targetUrl } = loadConfig();
+  const { targetUrlQA, targetUrlPROD } = loadConfig();
   console.log(`PNS relay server listening on port ${PORT}`);
-  //console.log('Current targetUrl:', targetUrl);
+  console.log('Current targetUrlQA:', targetUrlQA);
+  console.log('Current targetUrlPROD:', targetUrlPROD);
 });
