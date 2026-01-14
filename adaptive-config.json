@@ -1,6 +1,6 @@
 {
-  "targetUrlPROD": "https://default55ebc54042a34026b4cc3928d18f84.bf.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/",
-  "targetUrlQA": "https://default55ebc54042a34026b4cc3928d18f84.bf.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/"
+  "targetUrlPROD": "",
+  "targetUrlQA": ""
 }
 
 
