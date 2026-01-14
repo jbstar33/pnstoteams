@@ -1,6 +1,6 @@
 {
-  "targetUrlPROD": "https://default55ebc54042a34026b4cc3928d18f84.bf.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/e13ccd2f8570472cb09acb57183a306e/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=F9KXjO-SJEBnlhZsefiYyJORmLRid-OpoarVyNIwPlE",
-  "targetUrlQA": "https://default55ebc54042a34026b4cc3928d18f84.bf.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/e852418348cc4dba9d21e01d507867e9/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=ZIfmit97UoWsYztvfsttwsscX8o4nqO37XoR3Aa7q3E"
+  "targetUrlPROD": "https://default55ebc54042a34026b4cc3928d18f84.bf.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/",
+  "targetUrlQA": "https://default55ebc54042a34026b4cc3928d18f84.bf.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/"
 }
 
 
