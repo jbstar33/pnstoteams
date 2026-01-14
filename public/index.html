@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>PNS → Teams Relay 서버 안내</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      background: #f5f5f7;
+      color: #1d1d1f;
+    }
+    .apple-header {
+      background: #fff;
+      box-shadow: 0 1px 4px #0001;
+      padding: 0 32px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .apple-logo {
+      width: 28px;
+      height: 28px;
+      margin-right: 16px;
+      vertical-align: middle;
+    }
+    .apple-title {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: #1d1d1f;
+    }
+    .container {
+      max-width: 700px;
+      margin: 48px auto 0 auto;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px #0002;
+      padding: 48px 32px 40px 32px;
+    }
+    h1 {
+      font-size: 2.2em;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #1d1d1f;
+      letter-spacing: -0.02em;
+    }
+    h2 {
+      color: #444;
+      margin-top: 32px;
+      font-size: 1.2em;
+      font-weight: 600;
+    }
+    .desc {
+      color: #86868b;
+      font-size: 1.1em;
+      margin-bottom: 64px;
+    }
+    .dev-info {
+      background: #f5f5f7;
+      border-radius: 10px;
+      padding: 18px 20px 38px 20px;
+      font-size: 16px;
+      margin-bottom: 44px;
+      box-shadow: 0 1px 4px #0001;
+    }
+    .env-grid {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 18px 24px;
+      margin-bottom: 18px;
+    }
+    .env-label {
+      background: #e9e9eb;
+      color: #1d1d1f;
+      font-weight: 600;
+      font-size: 17px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 70px;
+      box-shadow: 0 1px 4px #0001;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+    .env-value {
+      background: #fff;
+      color: #333;
+      font-size: 16px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      padding: 0 18px;
+      min-height: 70px;
+      box-shadow: 0 1px 4px #0001;
+      word-break: break-all;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+    .env-channel {
+      font-size: 14px;
+      color: #86868b;
+      margin-left: 8px;
+    }
+    .env-channel {
+      color: #444;
+      font-size: 15px;
+      margin-bottom: 2px;
+    }
+    .log-link {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 10px 22px;
+      background: #222;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      box-shadow: 0 2px 8px #2222;
+      transition: background 0.2s;
+    }
+    .log-link:hover {
+      background: #444;
+    }
+    @media (max-width: 800px) {
+      .container { max-width: 98vw; padding: 18px 6vw; }
+      .apple-header { padding: 0 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="apple-header">
+    <a href="https://qa-hub.onestorecorp.com" target="_blank" style="display:flex;align-items:center;text-decoration:none;">
+      <span class="apple-title" style="font-size:22px;font-weight:600;color:#1d1d1f;">QA-HUB</span>
+    </a>
+  </div>
+  <div class="container">
+    <h1>PNS → Teams Relay 서버</h1>
+    <div class="desc">PNS 메시지를 수신하여 Teams로 재전송하는 서버입니다.</div>
+    <div class="dev-info">
+      아래 정보를 참고하여 <b>개발자센터 PNS</b>를 설정해 주세요.<br>
+      <div style="height: 24px;"></div>
+      <div class="env-grid">
+        <div class="env-label">PNS QA</div>
+        <div class="env-value">
+          <div>
+            <div>https://qa-hub.onestorecorp.com/pns/QA</div>
+            <div class="env-channel">Teams Channel: QA(Testing) &gt; PNS Test - QA환경</div>
+          </div>
+        </div>
+        <div class="env-label">PNS PROD</div>
+        <div class="env-value">
+          <div>
+            <div>https://qa-hub.onestorecorp.com/pns/prod</div>
+            <div class="env-channel">Teams Channel: QA(Testing) &gt; PNS Test - 상용환경</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h2>로그 보기</h2>
+    <a class="log-link" href="/logs-view" target="_blank">adaptive-log.jsonl 로그 새창에서 보기</a>
+  </div>
+</body>
+</html>
